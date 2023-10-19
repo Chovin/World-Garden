@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/site.webmanifest">
 
     <title>Sketch</title>
 
@@ -10,11 +11,22 @@
 
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
-    <script src="projection.js"></script>
-    <script src="onmobile.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/",
+          "intervalScheduler": "./intervalScheduler.js",
+          "mobileCheck": "./onmobile.js",
+          "projection": "./projection.js"
+        }
+      }
+    </script>
   </head>
 
   <body>
-    <script src="sketch.js"></script>
+    <!-- <script src="sketch.js"></script> -->
+    <canvas id="c"></canvas>
+    <script src="render.js" type="module"></script>
   </body>
 </html>

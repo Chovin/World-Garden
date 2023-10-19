@@ -1,8 +1,8 @@
 // https://github.com/Leaflet/Leaflet/blob//src/geo/projection/Projection.Mercator.js#L12C8-L30C3
 
-const earthRadius = 6378137;
+export const earthRadius = 6378137;
 
-const SphericalMercator = {
+export const SphericalMercator = {
 
 	R: earthRadius,
 	MAX_LATITUDE: 85.0511287798,
@@ -29,7 +29,7 @@ const SphericalMercator = {
 
 };
 
-function latLngToTile(latlng) {
+export function latLngToTile(latlng, zoomlvl) {
   let scale = Math.pow(2, zoomlvl)
   let point = SphericalMercator.project(latlng)
   // scale = scale || 1;
@@ -39,7 +39,7 @@ function latLngToTile(latlng) {
   return point;
 }
 
-function tileToLatLng(point) {
+export function tileToLatLng(point, zoomlvl) {
   let scale = Math.pow(2, zoomlvl);
   let sc = 0.5 / (Math.PI * SphericalMercator.R);
   point[0] = (point[0]/scale - 0.5)/sc;

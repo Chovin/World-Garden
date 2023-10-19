@@ -2,10 +2,14 @@ html, body, canvas {
   margin: 0;
   padding: 0;
   touch-action: none;
+  height: 100%
 }
 
 canvas {
   display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
 
 @viewport {  
@@ -22,4 +26,10 @@ canvas {
     top: 100%;
     left: 0;
   }
+}
+
+#c {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
